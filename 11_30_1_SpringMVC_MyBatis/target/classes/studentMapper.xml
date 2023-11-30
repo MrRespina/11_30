@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ji.spring007.student.StudentMapper">
+	<insert id="regStudent" parameterType="com.ji.spring007.student.Student">
+		INSERT INTO nov29_student VALUES(nov29_student_seq.nextval,#{s_name},#{s_nickname})
+	</insert>
+	<select id="getAllStudent" resultType="com.ji.spring007.student.Student">
+		SELECT * FROM nov29_student ORDER BY s_no
+	</select>
+
+</mapper>

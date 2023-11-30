@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	//	$(선택자).이벤트(콜백함수);
+	//		콜백함수 : 어떤 이벤트에 의해 호출되어지는 함수
+	
+/* 	$(document).ready(function init(){	// 이(문서).준비가 되면(자동으로 호출할 함수);
+		alert('Hello!');
+	}); */
+	/* $(function(){
+		alert('hello.');
+	}); */
+	$(function(){
+		$("h1").click(() => {
+			$("h2").click(()=>{
+				alert('h1 > h2')
+			});
+		});
+	
+		let b= false;
+		$('h3').click(()=>{
+			b = !b;
+			alert(b);
+		});
+		
+		let iiInput = $('#ii');	// == document.getElementById('ii');
+		$('button').click((=>{
+			alert(iiInput.val());	// val = value
+		});
+		
+	});
+
+</script>
+
+</head>
+<body>
+	<h1>날씨가 춥다</h1>
+	<h2>히터를 틀었는데</h2>
+	<h3>더워져버렸다.</h3>
+	<hr>
+	<input id="ii"><button>출력</button><button>print</button>
+	<!-- 
+		유효성 검사 - XXXValidChecker.js
+			> 유효성 검사 편하게 하려고 함수를 정리해놓은 것!
+		웹 페이지 이벤트 처리 - jQuery.js
+			>  JS 자체를 편하게 사용할 수 있도록 함수를 정리해놓은 것!
+	 -->
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+	h1{
+		color:red;
+		transition : all 0.5s ease-out;
+	}
+
+</style>
+<script type="text/javascript" src="jQuery.js"></script>
+<script type="text/javascript">
+	$(()=>{
+		
+		$('#btn1').click(()=>{
+			$('h1').css('color','orange');
+			$('h1').css('background-color','black');
+			
+			// 비추!! 계속적으로 css 엮는거 가능은 함.
+			//	$('h1').css('color','orange').css().css; ~~~~ 보다는 따로따로 할 것.
+		});
+		
+		$('#btn2').click(()=>{
+			let h1Color = $('h1').css('color');
+			alert(h1Color);
+		});
+		
+		$('#btn3').click(()=>{
+			let fSize = $('#i').val();
+			$('h1').css('font-size',fSize+"pt");
+		});
+		
+		$('#btn4').click(()=>{
+			let iWidth = $('#i').css('width');
+			$('#i').val(iWidth);
+		})
+		
+		$('#btn5').click(()=>{
+			let iWidth = $('#i').val();
+			$('#i').css('width',iWidth+"px");
+		})
+		
+		$('#changeColor').click(() =>{
+			
+			let r = $('#r').val();
+			let g = $('#g').val();
+			let b= $('#b').val();
+			
+			if(r==0||r==null){
+				r = 0;
+			}
+			
+			if(g==0||g==null){
+				g = 0;
+			}
+			
+			if(b==0||b==null){
+				b = 0;
+			}
+			$('h1').css('color',"rgb("+r+","+g+","+b)+")";
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>12345</h1>
+	<hr>
+	<button id="btn1">btn1</button>
+	<button id="btn2">btn2</button>
+	<button id="changeColor">색변경</button><p>
+	<input id="r"><input id="g"><input id="b">
+	<hr>
+	<input id="i"><p>
+	<button id="btn3">btn3</button>
+	<button id="btn4">btn4</button>
+	<button id="btn5">btn5</button>
+
+</body>
+</html>
